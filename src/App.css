@@ -1,0 +1,381 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+html {
+  font-family: "Rubik", sans-serif;
+  font-size: 10px;
+}
+
+@media (max-width: 900px) {
+  html {
+    font-size: 9px;
+  }
+}
+@media (max-width: 800px) {
+  html {
+    font-size: 8px;
+  }
+}
+@media (max-width: 700px) {
+  html {
+    font-size: 7px;
+  }
+}
+@media (max-width: 500px) {
+  html {
+    font-size: 6px;
+  }
+  .wrapper {
+    justify-content: center;
+  }
+}
+@media (max-width: 400px) {
+  html {
+    font-size: 5px;
+  }
+  .wrapper {
+    justify-content: center;
+  }
+}
+.wrapper {
+  min-width: 100vw;
+  min-height: 100vh;
+  overflow-y: scroll;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+  color: white;
+}
+
+.bio {
+  display: flex;
+  position: absolute;
+  top: 5rem;
+  right: 5rem;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.bio .githublink {
+  text-decoration: none;
+  color: #fff;
+}
+.bio .githublink .bioimage {
+  width: 6rem;
+  border-radius: 50%;
+  margin: 0.2rem;
+}
+.bio .githublink .name {
+  font-size: 1rem;
+  margin: 0.2rem;
+}
+.bio .githublink .job {
+  font-size: 0.7rem;
+}
+
+.today {
+  width: 54rem;
+  height: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 1.5rem;
+  position: relative;
+  box-shadow: 0.3rem 0.3rem 1rem 0 rgba(0, 0, 0, 0.1), -0.3rem -0.3rem 1rem 0 rgba(0, 0, 0, 0.1), inset -0.3rem -0.3rem 1rem 0 rgba(255, 255, 255, 0.1), inset 0.3rem 0.3rem 1rem 0 rgba(255, 255, 255, 0.1);
+}
+.today::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  -webkit-backdrop-filter: blur(0.7rem);
+          backdrop-filter: blur(0.7rem);
+  border-radius: inherit;
+  position: absolute;
+}
+.today .section-1, .today .section-2, .today .section-3 {
+  display: flex;
+  padding: 0 4rem;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+.today .section-1 {
+  height: 30%;
+  justify-content: space-between;
+}
+.today .section-1 .date {
+  display: flex;
+  justify-content: center;
+  max-width: 30%;
+  width: 30%;
+  flex-direction: column;
+}
+.today .section-1 .date .dayofweek {
+  font-size: 1.8rem;
+}
+.today .section-1 .date .dayofmonth {
+  font-size: 1.2rem;
+}
+.today .section-1 .clock {
+  font-size: 4rem;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 30%;
+  width: 30%;
+}
+.today .section-1 .clock .colon {
+  font-size: 3rem;
+  animation: fade 1s infinite;
+}
+@keyframes fade {
+  to {
+    opacity: 0;
+  }
+}
+.today .section-1 .clock .pmam {
+  align-self: flex-start;
+  font-size: 2rem;
+}
+.today .section-1 .location {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 30%;
+  width: 30%;
+}
+.today .section-1 .location .country {
+  align-self: flex-end;
+  font-size: 1.8rem;
+}
+.today .section-1 .location .city {
+  font-size: 1.2rem;
+}
+.today .section-2 {
+  height: 40%;
+  justify-content: center;
+}
+.today .section-2 .todayImg {
+  width: 10rem;
+  animation: appear 7s linear;
+}
+.today .section-2 .hourly {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  animation: appear 7s linear;
+}
+.today .section-2 .hourly .hours {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  font-size: 1.5rem;
+}
+.today .section-2 .hourly .hours:nth-child(n) {
+  border-right: 0.1rem solid rgba(255, 255, 255, 0.3);
+}
+.today .section-2 .hourly .hours:nth-child(6) {
+  border-right: none !important;
+}
+.today .section-2 .hourly .hourImg {
+  width: 5rem;
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.today .section-3 {
+  height: 30%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.today .section-3 .wind {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  width: 30%;
+}
+.today .section-3 .wind .windSpeed {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.today .section-3 .wind .windSpeed .speedValue {
+  font-size: 2rem;
+  margin-right: 0.2rem;
+}
+.today .section-3 .wind .windSpeed .speedUnit {
+  font-size: 1.5rem;
+  margin-left: 0.2rem;
+  align-self: center;
+}
+.today .section-3 .wind .windDir {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  font-size: 1.5rem;
+}
+.today .section-3 .wind .windDir .direction {
+  font-size: 2rem;
+  margin-right: 0.2rem;
+}
+.today .section-3 .wind .windDir i {
+  font-size: 2rem;
+  margin-left: 0.2rem;
+}
+.today .section-3 .rain-humidity {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+}
+.today .section-3 .rain-humidity .rain, .today .section-3 .rain-humidity .humidity {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.today .section-3 .rain-humidity .rain i, .today .section-3 .rain-humidity .humidity i {
+  font-size: 2.5rem;
+}
+.today .section-3 .rain-humidity .rain .rainPerc, .today .section-3 .rain-humidity .rain .humidityPerc, .today .section-3 .rain-humidity .humidity .rainPerc, .today .section-3 .rain-humidity .humidity .humidityPerc {
+  font-size: 1.5rem;
+}
+.today .section-3 .rain-humidity .rain {
+  padding-right: 0.3rem;
+  border-right: 0.1rem solid #fff;
+}
+.today .section-3 .rain-humidity .humidity {
+  margin-left: 0.3rem;
+}
+.today .section-3 .currentDeg {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.2rem;
+}
+.today .section-3 .visibility {
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.other_days {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.dayBoxes {
+  width: 10rem;
+  height: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem;
+  position: relative;
+  border-radius: 1rem;
+}
+.dayBoxes::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
+  border-radius: inherit;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0.2rem 0.2rem 3rem 0 rgba(0, 0, 0, 0.1), -0.2rem -0.2rem 3rem 0 rgba(0, 0, 0, 0.1), inset -0.2rem -0.2rem 3rem 0 rgba(255, 255, 255, 0.1), inset 0.2rem 0.2rem 3rem 0 rgba(255, 255, 255, 0.1);
+}
+.dayBoxes > * {
+  z-index: 2;
+}
+.dayBoxes h3 {
+  padding-top: 1rem;
+  font-size: 1.5rem;
+}
+.dayBoxes img {
+  width: 5rem;
+}
+.dayBoxes h3 {
+  padding-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.firstScreen {
+  width: 30rem;
+  height: 15rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly !important;
+  font-size: 1.6rem;
+}
+.firstScreen .loadingIcon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  position: relative;
+  border: 0.5rem solid rgba(255, 255, 255, 0.5);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: loader 1s infinite ease-in-out;
+}
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.errorPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 40rem !important;
+  height: 15rem !important;
+  font-size: 1.6rem;
+}/*# sourceMappingURL=App.css.map */
