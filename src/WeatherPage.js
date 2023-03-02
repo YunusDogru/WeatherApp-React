@@ -50,13 +50,13 @@ const WeatherPage = ({location, weather, date}) => {
             <div className="section-2"> 
                 {
                     showFirst ? 
-                    <img src={`http://openweathermap.org/img/wn/${weather[0].weather[0].icon}.png`} alt="" className="todayImg"/>
+                    <img src={`https://openweathermap.org/img/wn/${weather[0].weather[0].icon}.png`} alt="" className="todayImg"/>
                     :
                     <div className="hourly"> 
                     {[1,2,3,4,5,6].map((i) => (
                         <div className="hours" key={i}>
                             <span className="hour">{weather[i].dt_txt.slice(11,13)}{weather[i].dt_txt.slice(11,13) < 12 ? "am" : "pm"}</span>
-                            <img src={`http://openweathermap.org/img/wn/${weather[i].weather[0].icon}.png`} className='hourImg'/>
+                            <img src={`https://openweathermap.org/img/wn/${weather[i].weather[0].icon}.png`} className='hourImg'/>
                             <span className='hourDeg'>{Math.floor(weather[i].main.temp) - 273}°</span>
                         </div>
                     ))}
@@ -83,7 +83,7 @@ const WeatherPage = ({location, weather, date}) => {
                 [1,2,3,4,5].map((item) => (
                     <div className="dayBoxes" key={item}>
                         <h3>{returnWeekDay(date.getDay() + item)}</h3>
-                        <img src={`http://openweathermap.org/img/wn/${weather[item * 8 - 1].weather[0].icon}.png`} alt=""/>
+                        <img src={`https://openweathermap.org/img/wn/${weather[item * 8 - 1].weather[0].icon}.png`} alt=""/>
                         <h3>{Math.floor(weather[item * 8 - 1].main.temp) -273}°</h3>
                     </div>
                 ))
