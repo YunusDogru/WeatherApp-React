@@ -43,7 +43,7 @@ function App() {
     let longitude = position.coords.longitude;
 
     const url = `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=8e393450d5e241e1a76c05ed77bd6152`;
-    const url2 = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=bc821cb969d7c778df30a0d748bf43f9`;
+    const url2 = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=92e7719b3b4b9943ab3fee4e9cd0b7c6`;
 
     axios.all([axios.get(url), axios.get(url2)])
     .then(axios.spread((...responses) => {
